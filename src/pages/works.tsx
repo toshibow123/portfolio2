@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from "gsap"; // 🔥 gsapをインポート
 import { FaReact, FaJsSquare, FaPython } from 'react-icons/fa'
 import { FaDartLang } from 'react-icons/fa6';
 import WorksList from '../components/WorkList';
+import Toppage from './toppage'
+import { Link } from 'react-router-dom';
+
 
 const skills = [
  {name: "React",
@@ -33,8 +36,15 @@ const skills = [
 
 export default function works() { // 🔥 関数名を大文字に修正
   const counters = useRef([]); // 🔥 修正（counter → counters）
+  const bars = useRef([]);
+  const [animationKey, setAnimationKey] = useState(0); 
 
   useEffect(() => {
+// **まずバーをリセット（透明 & 0%に）**
+    bars.current.forEach((bar) => {
+      if (bar) gsap.set(bar, {width: "0%"});
+    });
+
     skills.forEach((_, index) => {
       if (counters.current[index]) { // 🔥 nullチェックを追加
         gsap.fromTo(
@@ -42,13 +52,28 @@ export default function works() { // 🔥 関数名を大文字に修正
           { innerText: 0 },
           { innerText: skills[index].level, duration: 1.5, snap: "innerText" }
         );
+
+        // バーの長さアニメーション
+        gsap.fromTo(
+          bars.current[index],
+          { width: "0%" },
+          { width: `${skills[index].level}%`, duration: 1.5, ease: "power3.out"}          
+        );
+
+        //バーのアニメーション
+        gsap.fromTo(
+          bars.current[index],
+          { width: "0%" }, //初期状態
+          { width: `${skills[index].level}%`, duration: 1.5, ease: "power3.out"} // バーの速度調整など
+        );
       }
     });
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-start gap-10 p-10"> 
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div>
+    <div className="flex flex-row items-center justify-center gap-10 px-6 max-w-6xl mx-auto">
+     <div className="w-1/3 bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">My Skills</h2>
 
       {skills.map((skill, index) => (
@@ -60,8 +85,9 @@ export default function works() { // 🔥 関数名を大文字に修正
           </div>
 
           {/* プログレスバー */}
-          <div className='w-full bg-gray-200 rounded-full h-4'>
+          <div className='w-full bg-gray-200 rounded-full h-4 overflow-hidden'>
             <div
+            ref={(el) => (bars.current[index] = el )}
               className='h-4 rounded-full transition-all duration-1000 ease-in-out'
               style={{
                 width: `${skill.level}%`,
@@ -82,6 +108,21 @@ export default function works() { // 🔥 関数名を大文字に修正
 <div>
   <WorksList/>
 </div>
+</div>
+<div className='flex justify-center mt-5'> 
+  <div className='flex justify-center mt-5 gap-4'>
+<Link to="/">
+<button className="text-2xl font-bold text-white bg-blue-400 hover:bg-blue-700 transition-all duration-300 px-6 py-3 rounded-lg shadow-md cursor-pointer">
+    TOP
+  </button>
+</Link>
+<Link to="/ABOUT">
+<button className="text-2xl font-bold text-white bg-red-400 hover:bg-red-700 transition-all duration-300 px-6 py-3 rounded-lg shadow-md cursor-pointer">
+    ABOUT
+  </button>
+</Link>
+</div>
+          </div>
     </div>
   );
 }

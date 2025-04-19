@@ -1,35 +1,40 @@
 // src/components/WorksList.jsx
 import React from "react";
+import hatsuonTop from "../assets/hatsuontop.png";
+import todoTop from "../assets/Todotop.png";
+import qrTop from "../assets/qrtop.png";
+import chatGif from "../assets/chat.gif";
+import memoryGif from "../assets/memory.gif";
 
 const works = [
   {
     title: "英語発音チェッカー",
     text: "Coding(Responsive) / Flutter",
-    imgSrc: "/img/works/hatsuontop.png",
+    imgSrc: hatsuonTop, 
     link: "https://github.com/toshibow123/hayakuchi_game",
   },
   {
     title: "ToDoリスト",
     text: "Coding(Responsive) / Flutter",
-    imgSrc: "/img/works/Todotop.png",
+    imgSrc: todoTop,
     link: "https://github.com/toshibow123/todo_list_app",
   },
   {
     title: "QRコードリーダー",
     text: "Coding(Responsive) / Flutter",
-    imgSrc: "/img/works/qrtop.png",
+    imgSrc: qrTop,
     link: "https://github.com/toshibow123/qr_code_reader",
   },
   {
     title: "LINE風メッセージアプリ",
     text: "Coding(Responsive) / Flutter",
-    imgSrc: "/img/works/chat.gif",
+    imgSrc: chatGif,
     link: "https://github.com/toshibow123/new_chat_app",
   },
   {
     title: "神経衰弱ゲームアプリ",
     text: "Coding(Responsive) / Flutter",
-    imgSrc: "/img/works/memory.gif",
+    imgSrc: memoryGif,
     link: "https://github.com/toshibow123/memory_game",
   },
 ];

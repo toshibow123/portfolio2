@@ -83,7 +83,6 @@ export default function toppage() {
       <h1 className="text-5xl font-serif is-slide-up inset-shadow-amber-600 ">Toshi's Portfolio Site</h1>
       <nav>
         <ul className="flex space-x-6">
-          <li className="text-3xl font-serif is-slide-up cursor-pointer">TOP</li>
           <Link to="ABOUT">
           <li className="text-3xl font-serif is-slide-up cursor-pointer">ABOUT</li>
           </Link>
