@@ -79,17 +79,17 @@ export default function toppage() {
     </div>
 
     {/* ヘッダー */}
-    <header className="absolute top-15 left-0 w-full h-24 flex justify-between items-center px-30">
-      <h1 className="text-5xl font-serif is-slide-up inset-shadow-amber-600 ">Toshi's Portfolio Site</h1>
+    <header className="fixed top-0 left-0 w-full flex justify-between items-center p-6 z-50">
+      <h1 className="site-title is-slide-up inset-shadow-amber-600">Toshi's Portfolio Site</h1>
       <nav>
         <ul className="flex space-x-6">
           <Link to="ABOUT">
-          <li className="text-3xl font-serif is-slide-up cursor-pointer">ABOUT</li>
+            <li className="nav-item is-slide-up cursor-pointer">ABOUT</li>
           </Link>
           <Link to="WORKS">
-          <li className="text-3xl font-serif is-slide-up cursor-pointer">WORKS</li>
+            <li className="nav-item is-slide-up cursor-pointer">WORKS</li>
           </Link>
-          <li className="text-3xl font-serif is-slide-up cursor-pointer">CONTACT</li>
+          <li className="nav-item is-slide-up cursor-pointer">CONTACT</li>
         </ul>
       </nav>
     </header>

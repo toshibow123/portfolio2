@@ -5,6 +5,7 @@ import todoTop from "../assets/Todotop.png";
 import qrTop from "../assets/qrtop.png";
 import chatGif from "../assets/chat.gif";
 import memoryGif from "../assets/memory.gif";
+import barcode from "../assets/barcode.png";
 
 const works = [
   {
@@ -36,6 +37,12 @@ const works = [
     text: "Coding(Responsive) / Flutter",
     imgSrc: memoryGif,
     link: "https://github.com/toshibow123/memory_game",
+  },
+  {
+    title: "値段比較アプリ",
+    text: "Coding(Responsive) / React",
+    imgSrc: barcode,
+    link: "非公開"
   },
 ];
 

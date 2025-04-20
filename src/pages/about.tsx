@@ -24,19 +24,19 @@ export default function about() {
   {/* 📜 経歴・学習歴 */}
   <div>
     <h2 className='text-xl font-bold border-b pb-2'>経歴・学習歴</h2>
-    <p className='mt-2'>WEBエンジニア転職を目指し、Web開発・アプリ開発を学習中</p>
+    <p className='mt-2'>ユーザーサポート、一般事務、庶務などの業務を対応。Word,Excel,PowerPoint,プログラミング言語や動画編集ソフトなどを日頃使用しています。</p>
   </div>
 
   {/* 🎮 趣味・個性 */}
   <div>
     <h2 className='text-xl font-bold border-b pb-2'>趣味・個性</h2>
-    <p className="mt-2">ゲーム好き (特にストリートファイター)、筋トレもやってます！</p>
+    <p className="mt-2">トレーニング、ゲーム、アイデア出し</p>
         </div>
 
         {/* 🚀 目標・夢 */}
         <div>
           <h2 className="text-xl font-bold border-b pb-2">🚀 目標・夢</h2>
-          <p className="mt-2">WEB開発スキルを活かしてフリーランスとして活動する！</p>
+          <p className="mt-2">会社員として働きながら、個人の事業を立ち上げる</p>
         </div>
         
 
